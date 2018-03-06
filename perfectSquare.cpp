@@ -1,5 +1,4 @@
 //Yasin Ehsan
-//CUNY ID: 23648099
 #include <iostream>
 using namespace std;
 
