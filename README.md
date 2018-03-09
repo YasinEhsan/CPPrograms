@@ -1,2 +1,2 @@
 # CPP-Programs
-My work from CS211
+My C++ projects(CS211), The City University of New York.
