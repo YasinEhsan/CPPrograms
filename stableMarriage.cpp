@@ -16,6 +16,7 @@ bool ok(int q[], int c) { // Finish this code
       return false;
     if(mp[i][q[i]] > mp[i][q[c]] && wp[q[c]][c] > wp[q[c]][i] ||
     mp[c][q[c]] > mp[c][q[i]] && wp[q[i]][i] > wp[q[i]][c])
+	    return false;
   }
 	/*Similar to 1D Queens, use a loop to check the array.
 	  Inside the loop we chould check for 3 conditions
