@@ -1,4 +1,5 @@
 //YASIN EHSAN
+//specs: http://venus.cs.qc.cuny.edu/~jchen/CS211/Projects/Marriage
 #include<iostream>
 using namespace std;
 
@@ -10,15 +11,8 @@ bool ok(int q[], int c) { // Finish this code
 	static int wp[3][3] = { { 2,1,0 },		// Woman#0's preferences
 							{ 0,1,2 },		// Woman#1's preferences
 							{ 2,0,1 } };	 // Woman#2's preferences
-  
-  for(int i = 0; i < c; i++){
-    if(q[i] == q[c])
-      return false;
-    if(mp[i][q[i]] > mp[i][q[c]] && wp[q[c]][c] > wp[q[c]][i] ||
-    mp[c][q[c]] > mp[c][q[i]] && wp[q[i]][i] > wp[q[i]][c])
-	    return false;
-  }
-	/*Similar to 1D Queens, use a loop to check the array.
+							
+  /*Similar to 1D Queens, use a loop to check the array.
 	  Inside the loop we chould check for 3 conditions
 	  First condition checks is the same women is married to two different man *hint we need to check if two things are equal*
 	  Second condition checks if (Man#i) and (Man#c's wife) both like each other more than their own spouse
@@ -33,19 +27,46 @@ bool ok(int q[], int c) { // Finish this code
 	  wp[q[i]][c] tells you how much Man#i's wife likes Man#c. 
 	  If mp[i][q[c]] < mp[i][q[i]], it means that Man#i likes Man#c's wife more than his own wife
 	*/
-
-	//if we pass the loop, what do we return?
+  
+  for(int i = 0; i < c; i++){
+    if(q[i] == q[c])
+      return false;//row test 
+    if(mp[i][q[i]] > mp[i][q[c]] && wp[q[c]][c] > wp[q[c]][i] || mp[c][q[c]] > mp[c][q[i]] && wp[q[i]][i] > wp[q[i]][c])
+      return false;//edge case. 
+  }
+  return true; 
 }
-
 void print(int q[]) {
 	static int solution = 0;
-	cout << "Solution #" << ++solution << ":\nMan\tWoman\n";
-	//Finish this print function
+	cout << "Solution #" << ++solution << ":\n man\tWoman\n";
+	for(int i = 0; i < 3; i++)
+	  cout << " " << i << "\t" << q[i] << endl; //diff from java
+	  //in java you can concatenate with a "+". cpp needs "<<"
 }
-
-
 int main() {
-	//Write the main function.
-	//The main function is exactly the same as 1D Queens. EXCEPT the array size is different.
-	return 0;
+  //same backtrack as all prev projects. Pretty cool. 
+  //***Def showing up on midterm!!!
+   int q[3] = {}; 
+   int c = 0;
+   while (c >= 0) {
+      c++;
+      if(c == 3){ //array ends at three.
+         print(q);
+         c--;
+      }
+      else
+        q[c] = -1;
+      while (c >= 0) {
+         q[c]++;
+         if(q[c] == 3)
+            c--;
+         else if(ok(q, c))
+          break;
+      }
+   }
+   return 0;
 }
+
+// This project was way easier than I thought. 
+// I can see how changing just one variable, array length, the same algorithm can be used over and over again. Really simplifies the code. 
+// Hardest part: grasping the second if condition
