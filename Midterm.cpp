@@ -23,6 +23,13 @@ int backtracking() {
    return 0;
 }
 
+//int 1d
+//8numin cross
+//perfect sq
+//stable marraige
+//integration
+//fancy queens
+
 int 2dQueens() {
   int q[8][8] = {};// Initialize the board to 0
   int r = 0, c = 0;// Start in the 1st row, 1st column
