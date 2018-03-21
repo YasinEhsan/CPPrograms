@@ -49,6 +49,13 @@ void print(int q[]) {
    // Set up the current solution on the chessboard by placing pointers to bq and wq in the appropriate squares.
    // Place black queens on white squares and white queens on black squares, so that you will be able to see them when printing.
    // Write the code.
+   
+   for(int i =0; i < 8; i++){
+     if(board[i][q[i]] == &wb)
+      board[i][q[i]] = &bq; //double equal
+     else
+      board[i][q[i]] = &wq;
+   }
 
    cout << "Solution #" << ++solution << ":\n ";
    
