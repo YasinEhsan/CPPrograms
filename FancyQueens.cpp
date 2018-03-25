@@ -1,3 +1,5 @@
+// Yasin Ehsan
+// Hurdles: 1) I had my if statements other way around (which printed the arabic number three for some reason), 2) I set board "==" to wb: double equals is assignment. I feel more familer with cpp syntax now
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -14,7 +16,7 @@ void print(int q[]) {
    int i, j, k, l;
    typedef char box[5][7];   // box is now a data type: a 5x7 2D array of characters
    box bb, wb, *board[8][8]; // bb and wb are boxes (5x7 arrays).  board is an 8x8 array of pointers to boxes.
-                             // You don't have to clean up the board after printing, because it's not static,
+                             // You don't have to clean up the board after printing, because it's not static
                              // so it'll be reinitialized the next time you call the funtion.
 
    // Fill in bb (black box) and wb (white box).  They each represent a square of the chessboard.
@@ -52,7 +54,7 @@ void print(int q[]) {
    
    for(int i =0; i < 8; i++){
      if(board[i][q[i]] == &wb)
-      board[i][q[i]] = &bq; //double equal
+      board[i][q[i]] = &bq; //THIS IS WHERE I STRUGGLED: "Double equal" is assignment
      else
       board[i][q[i]] = &wq;
    }
