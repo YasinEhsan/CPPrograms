@@ -29,6 +29,8 @@ int backtracking() {
 //stable marraige
 //integration
 //fancy queens
+//n queens
+//memory stuff 
 
 int 2dQueens() {
   int q[8][8] = {};// Initialize the board to 0
