@@ -35,8 +35,11 @@ bool ok(int q[], int c) {
          return false;
    return true;
 }
-void print(int q[])
-for(int i =0; i < 8; i++){
+void print(int q[]){
+   typedef char box[5][7];   // box is now a data type: a 5x7 2D array of characters
+   box bb, wb, *board[8][8];
+	
+ for(int i =0; i < 8; i++){
      if(board[i][q[i]] == &wb)
       board[i][q[i]] = &bq; //THIS IS WHERE I STRUGGLED: "Double equal" is assignment
      else
