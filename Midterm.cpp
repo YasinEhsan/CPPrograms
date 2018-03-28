@@ -23,14 +23,67 @@ int backtracking() {
    return 0;
 }
 
-//int 1d
-//8numin cross
-//perfect sq
-//stable marraige
+------------------------------------------------------------------------------------------
 //integration
-//fancy queens
 //n queens
 //memory stuff 
+------------------------------------------------------------------------------------------
+//fancy queens
+bool ok(int q[], int c) {
+   for (int i = 0; i < c; ++i)
+      if (q[i] == q[c] || abs(q[i] - q[c]) == c - i)
+         return false;
+   return true;
+}
+void print(int q[])
+for(int i =0; i < 8; i++){
+     if(board[i][q[i]] == &wb)
+      board[i][q[i]] = &bq; //THIS IS WHERE I STRUGGLED: "Double equal" is assignment
+     else
+      board[i][q[i]] = &wq;
+ }
+
+//Stable Marriage
+bool ok(int q[], int c) {
+for(int i = 0; i < c; i++){
+    if(q[i] == q[c])
+      return false;//row test 
+    if(mp[i][q[i]] > mp[i][q[c]] && wp[q[c]][c] > wp[q[c]][i] || mp[c][q[c]] > mp[c][q[i]] && wp[q[i]][i] > wp[q[i]][c])
+      return false;//edge case. 
+  }
+  return true; 
+}
+
+
+//8numin cross
+bool test(int cross[], int x) {
+	static int checkList[8][5] = {
+		{-1},
+		{0,-1},
+		{1,-1},
+		{0,1,2,-1},
+		{1,2,3,-1},
+		{2,4,-1},
+		{0,3,4,-1},
+		{3,4,5,6,-1},
+	};
+	//fill in
+	for(int i = 0; i < x; i++)
+	  if(cross[x] == cross[i])
+	  return false;
+	for(int i = 0; checkList[x][i] != -1; i++)//sentinal val
+	  if(abs(cross[x] - cross[checkList[x][i]]) == 1)//becuz consecutive numbers are one apart
+	    return false;
+	return true;
+} 
+
+//1dQueens
+bool ok(int q[], int c) {
+   for(int i =0; i < c; i++) //each i from 0 to c-1
+      if (q[i] == q[c] || abs(c-i) == abs(q[c]-q[i]))
+         return false;
+   return true;
+}
 
 int 2dQueens() {
   int q[8][8] = {};// Initialize the board to 0
