@@ -27,6 +27,7 @@ int backtracking() {
 //integration
 //n queens
 //memory stuff 
+//the new main version using recursion.
 ------------------------------------------------------------------------------------------
 //fancy queens
 bool ok(int q[], int c) {
@@ -36,6 +37,7 @@ bool ok(int q[], int c) {
    return true;
 }
 void print(int q[]){
+   /*Some part... */ (*board[i][j])[k][l]; 
    typedef char box[5][7];   // box is now a data type: a 5x7 2D array of characters
    box bb, wb, *board[8][8];
 	
