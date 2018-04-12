@@ -23,6 +23,19 @@ int backtracking() {
    return 0;
 }
 
+//recursive version
+void move(int* q, int i) /* try place in col i*/ {
+ if(i==8) {
+    print(q);
+    return;
+ }
+
+ for(int j=0;j<8;j++) /*j is the row value */ {
+    q[i]=j;
+    if(ok(q,i)) // try and place a queen in row j of col i,if yes
+       move(q,i+1); // go to next column otherwise try next j
+ }
+
 ------------------------------------------------------------------------------------------
 //integration
 //n queens
