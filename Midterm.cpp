@@ -37,6 +37,48 @@ void move(int* q, int i) /* try place in col i*/ {
  }
 	
 //pointers 101
+int main() {
+    int a[2][2] = {
+      {123,94},
+      {37826,584967}
+    };
+      int b[2][2] = {
+      {110,1},
+      {2,3}
+    };
+    
+    cout << "adress of a: " << a << endl; //first pos
+    cout << "adress of a: " << a[0] << endl; //same 
+    cout << "adress of a: " << &a[0][0] << endl << endl; //same
+    
+    cout << "adress of a: " << a + 1 << endl;//first post 2nd row += 8hex
+    cout << "adress of a: " << a[1] << endl; //same 
+    cout << "adress of a: " << &a[1][0] << endl << endl;//same 
+    
+    cout << "value of a[0][0]: " << a[0][0] << endl; //element
+    cout << "value of a[0][0]: " << **a << endl; //same
+     cout << "value of a[0][0]: " << **(a+0) << endl; //same
+    cout << "value of a[0][0]: " << *(*a+0) << endl << endl; //same
+    
+    //quiz 2
+    cout << sizeof(b) << endl; //16
+    printf("%d\n", sizeof(b));
+    cout << sizeof(*(b))<< endl; //8: size of pointer 
+    cout << sizeof(b + 1)<< endl << endl; //8: size of 2nd row
+    
+    // printf("%s%d\n", "\"sizeof b\" ", sizeof(b));
+    
+    cout << b << endl; //first pos
+    cout << *b << endl; //first pos
+    cout << *b + 1 << endl; //pos of [0][1]
+    cout << *(b + 1) << endl; 
+    cout << b + 1 << endl; //first elemet second row
+    cout << &b << endl; //same as b
+    cout << &b + 1 << "\n\n"; //adding +=16 hex
+    
+    printf("%d\n", **b);
+  return 0;
+}
 
 //Gcf recursive
 int GCF(int a, int b) {
@@ -269,4 +311,3 @@ void printDivisors(int n) {
         }
     }
 }
-
