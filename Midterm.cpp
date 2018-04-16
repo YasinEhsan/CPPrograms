@@ -50,9 +50,15 @@ int LCM(int a, int b)	{
 }
 ------------------------------------------------------------------------------------------
 //n queens
+//towers of hanoi	
 //b1: Find all possible ways of multupling 144
-//b2: Dijkstr's Algorithm
-//java stuff
+//b2: Dijkstra's Algorithm
+//notes...
+	
+	
+	
+	
+	
 	
 ------------------------------------------------------------------------------------------
 	
@@ -196,3 +202,35 @@ Order        < ------  Ordinary Queens  ------ >              < ----- Superqueen
 8                       92                     12                    0                   0
 9                      352                     46                    0                   0
 10                     724                     92                    4                   1   
+	
+// A C++ program for Dijkstra's single source shortest path algorithm.
+// The program is for adjacency matrix representation of the graph
+  
+#include <stdio.h>
+#include <limits.h>
+  
+// Number of vertices in the graph
+#define V 9
+  
+// A utility function to find the vertex with minimum distance value, from
+// the set of vertices not yet included in shortest path tree
+int minDistance(int dist[], bool sptSet[])
+{
+   // Initialize min value
+   int min = INT_MAX, min_index;
+  
+   for (int v = 0; v < V; v++)
+     if (sptSet[v] == false && dist[v] <= min)
+         min = dist[v], min_index = v;
+  
+   return min_index;
+}
+  
+// A utility function to print the constructed distance array
+int printSolution(int dist[], int n)
+{
+   printf("Vertex   Distance from Source\n");
+   for (int i = 0; i < V; i++)
+      printf("%d tt %d\n", i, dist[i]);
+}
+
