@@ -35,13 +35,37 @@ void move(int* q, int i) /* try place in col i*/ {
     if(ok(q,i)) // try and place a queen in row j of col i,if yes
        move(q,i+1); // go to next column otherwise try next j
  }
+	
+//pointers 101
 
+//Gcf recursive
+int GCF(int a, int b) {
+	if(b == 0)
+		return a;
+	return GCF(b, a % b);	
+}
+//LCM recur
+int LCM(int a, int b)	{
+	return a *( b / GCF(a,b));
+}
 ------------------------------------------------------------------------------------------
-//integration
 //n queens
-//memory stuff 
-//the new main version using recursion.
+//b1: Find all possible ways of multupling 144
+//b2: Dijkstr's Algorithm
+//java stuff
+	
 ------------------------------------------------------------------------------------------
+	
+//Fibonacci
+int fib(int n){
+	if(n==1 || n==2) return 1;
+		return fib(n-1)+fib(n-2);
+};
+void main(){
+	for(int i=1; i<70; i++)
+	cout<<" fib("<<i<<") = "<<fib(i)<<endl; //slows down at 47ish
+}
+	
 //fancy queens
 bool ok(int q[], int c) {
    for (int i = 0; i < c; ++i)
@@ -71,7 +95,6 @@ for(int i = 0; i < c; i++){
   }
   return true; 
 }
-
 
 //8numin cross
 bool test(int cross[], int x) {
@@ -159,3 +182,17 @@ int 2dQueens() {
    cout<<endl;
       goto backtrack;
 }
+//n Queens	
+Order        < ------  Ordinary Queens  ------ >              < ----- Superqueens ----- >
+(“N”)      Total Solutions       Unique Solutions            Total Sol.         Unique Sol.
+------------------------------------------------------------------------------------------
+1                        1                      1                    1                   1
+2                        0                      0                    0                   0
+3                        0                      0                    0                   0
+4                        2                      1                    0                   0
+5                       10                      2                    0                   0
+6                        4                      1                    0                   0
+7                       40                      6                    0                   0
+8                       92                     12                    0                   0
+9                      352                     46                    0                   0
+10                     724                     92                    4                   1   
