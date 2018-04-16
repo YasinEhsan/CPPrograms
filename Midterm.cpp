@@ -311,3 +311,5 @@ void printDivisors(int n) {
         }
     }
 }
+//0.6 miles in kilometers
+//1.6 km in a m
