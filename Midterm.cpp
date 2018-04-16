@@ -64,8 +64,9 @@ int LCM(int a, int b)	{
 	
 //Fibonacci
 int fib(int n){
-	if(n==1 || n==2) return 1;
-		return fib(n-1)+fib(n-2);
+	if(n==1 || n==2) 
+		return 1;
+	return fib(n-1)+fib(n-2);
 };
 void main(){
 	for(int i=1; i<70; i++)
@@ -91,12 +92,16 @@ void print(int q[]){
       board[i][q[i]] = &wq;
  }
 
-//Stable Marriage
+//Stable Marriage...pattern?
 bool ok(int q[], int c) {
 for(int i = 0; i < c; i++){
     if(q[i] == q[c])
       return false;//row test 
-    if(mp[i][q[i]] > mp[i][q[c]] && wp[q[c]][c] > wp[q[c]][i] || mp[c][q[c]] > mp[c][q[i]] && wp[q[i]][i] > wp[q[i]][c])
+    if(mp[i][q[c]] < mp[i][q[i]] && wp[q[c]][i] < wp[q[c]][c] 
+       
+       || 
+       
+       mp[c][q[i]] < mp[c][q[c]] && wp[q[i]][c] < wp[q[i]][i])
       return false;//edge case. 
   }
   return true; 
