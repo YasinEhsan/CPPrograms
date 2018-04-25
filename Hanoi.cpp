@@ -4,6 +4,7 @@
 // - the buffer charcter cud be null
 // - char is 65 which is ascii from A
 // - candidate has to be "less" than the to.back
+// - is there a way of assigning 'to' in one condition
 
 #include <iostream>
 #include <vector>
