@@ -9,7 +9,7 @@ bool ok(int q[], int c) {
    for(int i =0; i < c; i++) //each i from 0 to c-1
       if (q[i] == q[c] || abs(c-i) == abs(q[c]-q[i]))
          return false;
-   return false;
+   return true;
 }
 void print(int q[]) {
    static int numSolutions = 0;
