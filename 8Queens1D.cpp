@@ -1,4 +1,4 @@
-//Yasin Ehsan 
+//Yasin Ehsan
 
 #include <iostream>
 #include <cmath>
@@ -16,10 +16,10 @@ void print(int q[]) {
    cout << "Solution #" << ++numSolutions << ": ";
   for(int i = 0; i < 8; i++)// for(int e: q)
     cout << q[i];
-   cout << "\n";
+     cout << "\n";
 }
 int main() {
-   int q[8] = {}; 
+   int q[8] = {};
    int c = 0;
    while (c >= 0) { // End the loop if you backtrack from the first column
       c++;
@@ -31,8 +31,7 @@ int main() {
         q[c] = -1;
       while (c >= 0) {
          q[c]++;
-         if(q[c] == 8)
-            c--;
+         if(q[c] == 8) c--;
          else if(ok(q, c))
           break;
       }
