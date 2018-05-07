@@ -54,10 +54,10 @@ int main() {
       // (compare the candidate with the ring on the closer tower; which tower is "closer" depends on whether n is odd or even)
 
       if(n%2 ==0){
-        if (t[(from + 1)%3].back() > candidate )
-           to = (from + 1)%3;
-        else
+        if (t[(from + 2)%3].back() > candidate )
            to = (from + 2)%3;
+        else
+           to = (from + 1)%3;
       }
       else{
         if (t[(from + 1)%3].back() > candidate )
