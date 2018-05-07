@@ -18,7 +18,7 @@ int main() {
    cin >> n;
    cout << endl;
    // The initial value of to depends on whether n is odd or even
-   int from = 0, to = from +1, candidate = 1, move = 0;
+   int from = 0, to = (2-n%2), candidate = 1, move = 0;
 
    // Initialize the towers
    for(int i = n + 1; i >= 1; --i)
