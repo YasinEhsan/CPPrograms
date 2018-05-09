@@ -1,5 +1,6 @@
 //Yasin Ehsan
-//The modulo project. IN ccp -1%5 retuerns -1. Sup to b 4.
+//shortest_path REcursive
+//Learned: IN ccp -1%5 retuerns -1. Sup to b 4.
 // Fix: (-1 + 5)%5.
 #include <iostream>
 #include <algorithm>
@@ -15,15 +16,13 @@ int calculateCost(int i, int j) {
                                             {5,9,3,9,9,5},
                                             {8,4,1,3,2,6},
                                             {3,7,2,8,6,4}};
-   // BAse case1
    static int cost[NUM_ROWS][NUM_COLS]; //pre set to '0'
 
-
-   //Base case 2
+   //Base case 1
    if(cost[i][j] != 0)
       return cost[i][j];
 
-   // Check for the base case.
+   //BAse case2
    if (j == 0) {
       path[i][j] = to_string(i);
       return weight[i][j];
@@ -35,6 +34,7 @@ int calculateCost(int i, int j) {
    int minCost = min(min(up,down), left);
 
 
+   //THE MEAT OF THE PROBLM
    // Update the path matrix (store the path to the current square in path[i][j]):
    // If up is the minimum, get the shortest path to the up-left square from the path matrix and concatenate it with the current row.
     if(minCost==up)
@@ -47,7 +47,6 @@ int calculateCost(int i, int j) {
     cost[i][j] = weight[i][j] + minCost;
 
     return cost[i][j];
-
 }
 
 int main() {
