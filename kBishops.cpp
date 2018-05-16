@@ -1,63 +1,65 @@
-//http://venus.cs.qc.edu/~waxman/211/Output%20for%20the%20k%20out%20of%20n%20bishops%20problem.pdf
-
-
-//http://venus.cs.qc.edu/~waxman/211/k%20bishops%20on%20an%20nXn%20chessboard.pdf
-
-
 //Yasin Ehsan
 //K Bishops
 //Learned:
+// + backtacking diff way
+// + col and row test based on div and mod
+
 
 #include <iostream>
 #include <cmath>
 using namespace std;
-
 //c is the position of the bishop array
 //n is the n by n grid
 
+// bool ok(int q[], int c, int n) {
+//   for(int i =0; i < n; i++)
+//       if (abs(q[c]%n - q[i]%n) == abs(q[c]/n - q[i]/n) ||
+//       abs(q[c]%n - q[i]%n) == abs(q[c]/n - q[i]/n) == 1)//diag test
+//         return false;
+//   return true;
+// }
+
 bool ok(int q[], int c, int n) {
-   for(int i =0; i < n; i++)
-      if (abs(q[c]%n - q[i]%n) == abs(q[c]/n - q[i]/n))//diag test
+   for(int i =0; i < c; i++) //each i from 0 to c-1
+      if ((q[c]/n - q[i]/n) == abs(q[c]%n - q[i]%n))//THE MEAT OF THE PBLM
          return false;
    return true;
 }
 
-int kBish(int n) {
+int kBish(int n, int k) {
    int* q = new int [n]; //Dynamic memory
    int c = 0;
    int count = 0;
    while (c >= 0) {
       c++;
-      if(c == n){
+      if(c == k){//k is the length of array q
          count++;
          c--;
       }
       else
-        q[c] = -1;
+        q[c] = q[c-1]; //q[c] = -1;
       while (c >= 0) {
          q[c]++;
-         if(q[c] == n) c--;
+         if(q[c] == n*n) c--;//n*n is max value of q[c]
          else if(ok(q, c, n))
           break;
       }
    }
-   delete [] q; //NEW syntax
+   delete [] q;
    return count;
 }
 
 int main() {
    int n, k;
-   cout << "Enter two Integers: ";
-   cin >> n >> k;
-   if(n == -1)
-    return 0;
-
-   //cout << "\n n k #Bishops\n";
-   printf("%s\n", "n k #Bishops");
-   for(int i =0; i<k; i++)
-     printf("%d %d %d \n", n, i+1, kBish(n));
-
-
-
+   n =0;
+   while(n != -1){
+     cout << "Enter two Integers: ";
+     cin >> n >> k;
+     if(n == -1)
+      return 0;
+     printf("%s\n", "n k #Bishops");
+     printf("%d %d %d \n\n", n, k, kBish(n, k));
+   }
    return 0;
 }
+   
