@@ -1,5 +1,5 @@
 //Yasin Ehsan
-//fix int n and to if loop
+//HANOI towers
 
 // - modulo 3 cuz 3 placeholders
 // - the buffer charcter cud be null

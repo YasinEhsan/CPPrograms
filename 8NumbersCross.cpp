@@ -1,5 +1,9 @@
 // Yasin Ehsan
 //8 numbers in a cross
+//Learned
+// - Could include a data struc with pre defined test values
+// - ^could acctually be less code coz less code = more finesse
+// - using same code(backtracking) but for a different application
 #include<iostream>
 #include<cmath>
 using namespace std;
@@ -23,7 +27,7 @@ bool test(int cross[], int x) {
 	  if(abs(cross[x] - cross[checkList[x][i]]) == 1)//becuz consecutive numbers are one apart
 	    return false;
 	return true;
-} 
+}
 
 void print(int cross[], int cap) {
 	static int count = 0;
@@ -36,7 +40,7 @@ void print(int cross[], int cap) {
 
 int main() {
 	//use the same 1d 8 crossueens main function
-	int cross[8] = {}; 
+	int cross[8] = {};
    int c = 0; //position in cross
    while (c >= 0) { // End the loop if you backtrack from the first column
       c++;

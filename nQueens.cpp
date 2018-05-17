@@ -1,7 +1,9 @@
 //Yasin Ehsan
 //N queens
-//Learned: new cpp syntax. Delete Array
-//Completed project in 5 min or less. Manz Lit!
+//Learned:
+// - new cpp syntax. "Delete Array"
+// - Dynamic memory is stored in heap...need to understand better
+// - Completed project in 5 min or less. Manz Lit!
 
 #include <iostream>
 #include <cmath>
@@ -43,4 +45,3 @@ int main() {
       cout << "There are " << nqueens(i) << " solutions to the " << i << " queens problem.\n";
    return 0;
 }
-   

@@ -1,6 +1,6 @@
 //Yasin Ehsan
 //shortest_path REcursive
-//Learned: IN ccp -1%5 retuerns -1. Sup to b 4.
+//Learned: IN ccp(at least in repl.it) -1%5 retuerns -1. Sup to b 4.
 // Fix: (-1 + 5)%5.
 #include <iostream>
 #include <algorithm>

@@ -3,7 +3,7 @@
 
 // LEarned:
 // -passing a function as type def.
-// -For loop with double inside
+// -For loop with double inside...MAJOR DEBUG ISSUE
 
 #include <iostream>
 using namespace std;
