@@ -8,16 +8,6 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-//c is the position of the bishop array
-//n is the n by n grid
-
-// bool ok(int q[], int c, int n) {
-//   for(int i =0; i < n; i++)
-//       if (abs(q[c]%n - q[i]%n) == abs(q[c]/n - q[i]/n) ||
-//       abs(q[c]%n - q[i]%n) == abs(q[c]/n - q[i]/n) == 1)//diag test
-//         return false;
-//   return true;
-// }
 
 bool ok(int q[], int c, int n) {
    for(int i =0; i < c; i++) //each i from 0 to c-1
@@ -62,4 +52,3 @@ int main() {
    }
    return 0;
 }
-   
