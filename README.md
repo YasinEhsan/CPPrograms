@@ -1,4 +1,6 @@
 # CPP-Programs
-My C++ projects, The City University of New York.
+My programs from a second level C++ course which put emphasis on developing algorithms and tracking memory.
 
-CS211 is a second level C++ course with a strong emphasis on algorithms and memory.
+[Course Syllabus](sy.pdf)
+
+CS 211, The City University of New York.
